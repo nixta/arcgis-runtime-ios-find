@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="____Search" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,8 +15,33 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hmA-jh-0na" customClass="AGSMapView">
+                                <rect key="frame" x="0.0" y="44" width="600" height="556"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="N73-MW-sxo">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="5fy-x6-jwP"/>
+                                </connections>
+                            </searchBar>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="hmA-jh-0na" secondAttribute="trailing" id="5ff-cW-twH"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="hmA-jh-0na" secondAttribute="bottom" id="6Ln-gP-Nt1"/>
+                            <constraint firstItem="N73-MW-sxo" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="7Rj-vN-2cd"/>
+                            <constraint firstAttribute="trailing" secondItem="N73-MW-sxo" secondAttribute="trailing" id="Dzr-gF-6Hr"/>
+                            <constraint firstItem="N73-MW-sxo" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="XEX-wb-apr"/>
+                            <constraint firstItem="hmA-jh-0na" firstAttribute="top" secondItem="N73-MW-sxo" secondAttribute="bottom" id="dMp-Cz-q4h"/>
+                            <constraint firstItem="hmA-jh-0na" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="gA1-Cv-knt"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="mapView" destination="hmA-jh-0na" id="9Rk-O3-lJm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

@@ -41,6 +41,7 @@
                     </view>
                     <connections>
                         <outlet property="mapView" destination="hmA-jh-0na" id="9Rk-O3-lJm"/>
+                        <outlet property="searchBar" destination="N73-MW-sxo" id="oIc-J7-Njd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
